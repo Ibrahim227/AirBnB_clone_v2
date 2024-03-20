@@ -52,7 +52,7 @@ class FileStorage:
     def delete(self, obj=None):
         """Delete object"""
         if obj is None:
-            pass
+            return
 
         if obj in self.__objects.values():
             key_to_delete = None
