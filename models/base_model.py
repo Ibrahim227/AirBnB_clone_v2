@@ -4,10 +4,6 @@ import uuid
 from datetime import datetime
 
 
-class Base = declarative_base():
-    """Base class"""
-    pass
-
 class BaseModel:
     """A base class for all hbnb models"""
     def __init__(self, *args, **kwargs):
