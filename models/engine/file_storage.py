@@ -10,7 +10,7 @@ class FileStorage:
 
     def all(self, cls=None):
         """Returns a dictionary of models currently in storage"""
-        return FileStorage.__objects
+        return FileStorage.__objectS
 
     def new(self, obj):
         """Adds new object to storage dictionary"""
@@ -35,7 +35,7 @@ class FileStorage:
         from models.amenity import Amenity
         from models.review import Review
 
-        classes = {
+        Classes = {
                     'BaseModel': BaseModel, 'User': User, 'Place': Place,
                     'State': State, 'City': City, 'Amenity': Amenity,
                     'Review': Review
