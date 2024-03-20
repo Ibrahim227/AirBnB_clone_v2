@@ -115,6 +115,62 @@ class HBNBCommand(cmd.Cmd):
 
     def do_create(self, args):
         """ Create an object of any class"""
+    if not args:
+        print("** class name missing **")
+        return
+
+    args_list = args.split()
+    class_name = args_list[0]
+    if class_name not in HBNBCommand.classes:
+        print("** class doesn't exist **")
+        return
+
+    # Remove the class name from the arguments list
+    args_list = args_list[1:]
+
+    # Parse parameters
+    params = {}
+    for arg in args_list:
+        # Split key-value pair
+        parts = arg.split('=')
+        if len(parts) != 2:
+            print(f"Invalid parameter: {arg}. Skipping.")
+            continue
+
+        key, value = parts
+
+        # Handle value types
+        if value.startswith('"') and value.endswith('"'):
+            # String
+            value = value[1:-1].replace('_', ' ')
+            value = value.replace('\\"', '"')  # Unescape double quotes
+        elif '.' in value:
+            # Float
+            try:
+                value = float(value)
+            except ValueError:
+                print(f"Invalid float value: {value}. Skipping.")
+                continue
+        else:
+            # Integer
+            try:
+                value = int(value)
+            except ValueError:
+                print(f"Invalid integer value: {value}. Skipping.")
+                continue
+
+        # Add parameter to dictionary
+        params[key] = value
+
+    # Create instance with parameters
+    new_instance = HBNBCommand.classes[class_name](**params)
+
+    # Save instance and print its ID
+    storage.save()
+    print(new_instance.id)
+    storage.save()
+
+        """
         if not args:
             print("** class name missing **")
             return
@@ -125,7 +181,7 @@ class HBNBCommand(cmd.Cmd):
         storage.save()
         print(new_instance.id)
         storage.save()
-
+        """
     def help_create(self):
         """ Help information for the create method """
         print("Creates a class of any type")
