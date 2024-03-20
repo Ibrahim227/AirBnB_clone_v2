@@ -4,6 +4,12 @@ import uuid
 from datetime import datetime
 
 
+
+class Base(DeclarativeBase):
+    """A Base class from SQLAlchemy"""
+    pass
+
+
 class BaseModel:
     """A base class for all hbnb models"""
     def __init__(self, *args, **kwargs):
