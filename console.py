@@ -121,7 +121,7 @@ class HBNBCommand(cmd.Cmd):
 
         args_list = args.split()
         class_name = args_list[0]
-        if class_name not int HBNBCommand.classes:
+        if class_name not in HBNBCommand.classes:
             print("** class doesn't exist **")
             return
 
@@ -143,7 +143,7 @@ class HBNBCommand(cmd.Cmd):
                 try:
                     value = float(value)
                 except ValueError:
-                     print(f"Invalid integer value: {value}. Skipping.")
+                    print(f"Invalid integer value: {value}. Skipping.")
                     continue
             params[key] = value
 
