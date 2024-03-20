@@ -58,7 +58,7 @@ class FileStorage:
         if obj in self.__objects.values():
             key_to_delete = None
             for key, value in self.__objects.values():
-                if value == obj
+                if value == obj:
                     key_to_delete = key
                     break
 
