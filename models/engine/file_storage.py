@@ -62,4 +62,5 @@ class FileStorage:
                     break
 
         if key_to_delete is not None:
-            del self.__objects[key_to_delete]"""
+            del self.__objects[key_to_delete]
+        """
