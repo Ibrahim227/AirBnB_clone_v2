@@ -26,7 +26,6 @@ def cisfun(text):
     return f'C {}'.format(text.replace('_', ' ')
 
 
-@app.route('/python/', defaults={'text': 'is cool'}, strict_slashes=False)
 @app.route('/python/<text>',  strict_slashes=False)
 def pythoniscool(text):
     """Prints Python is cool"""
@@ -36,4 +35,3 @@ def pythoniscool(text):
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000)
-
