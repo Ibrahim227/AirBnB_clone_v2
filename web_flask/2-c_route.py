@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Import the required module"""
 from flask import Flask
+from urllib.parse import unquote
 
 
 app = Flask(__name__)
@@ -21,7 +22,8 @@ def hbnb():
 @app.route('/c/<text>', strict_slashes=False)
 def cisfun(text):
     """Prints HBNB"""
-    return f'C {escape(text)}'
+    text = unquote(text)
+    return f'C {}'.format(text.replace('_', ' ')
 
 
 if __name__ == "__main__":
