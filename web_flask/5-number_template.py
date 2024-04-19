@@ -1,9 +1,8 @@
 #!/usr/bin/python3
 """Import the required module"""
-from flask import Flask
+from flask import Flask, render_template
 from urllib.parse import unquote
-from flask import render_template
-from templates import *
+
 
 app = Flask(__name__)
 
