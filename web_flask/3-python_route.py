@@ -31,7 +31,7 @@ def cisfun(text):
 def pythoniscool(text):
     """Prints Python is cool"""
     text = unquote(text)
-    return f'Python {}'.format(text.replace('_', ' ')
+    return 'Python {}'.format(text.replace('_', ' '))
 
 
 if __name__ == "__main__":
