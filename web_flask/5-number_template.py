@@ -39,6 +39,7 @@ def numberiscool(n):
     """Prints number only if it is an integer"""
     return f'{n} is a number'
 
+
 @app.route('/number_template/<int:n>', strict_slashes=False)
 def numberiscool(n):
     """Prints number only if it is an integer"""
