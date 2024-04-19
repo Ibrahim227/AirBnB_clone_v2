@@ -39,5 +39,6 @@ def numberiscool(n):
     """Prints number only if it is an integer"""
     return f'{n} is a number'
 
+
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000)
