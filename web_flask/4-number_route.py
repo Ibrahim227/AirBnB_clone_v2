@@ -23,7 +23,7 @@ def hbnb():
 def cisfun(text):
     """Prints C is fun"""
     text = unquote(text)
-    return 'C {}'.format(text.replace('_', ' ')
+    return 'C {}'.format(text.replace('_', ' '))
 
 
 @app.route('/python/', defaults={'text': 'is_cool'}, strict_slashes=False)
