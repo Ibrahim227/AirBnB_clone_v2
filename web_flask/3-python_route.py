@@ -21,9 +21,9 @@ def hbnb():
 
 @app.route('/c/<text>', strict_slashes=False)
 def cisfun(text):
-    """Prints HBNB"""
+    """Prints C is fun"""
     text = unquote(text)
-    return f'C {}'.format(text.replace('_', ' ')
+    return 'C {}'.format(text.replace('_', ' '))
 
 
 @app.route('/python/', defaults={'text': 'is_cool'}, strict_slashes=False)
