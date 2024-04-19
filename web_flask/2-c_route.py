@@ -21,9 +21,5 @@ def hbnb():
 
 @app.route('/c/<text>', strict_slashes=False)
 def cisfun(text):
-    """Prints HBNB"""
+    """Prints C followed by (text) value and replace _ by a space"""
     return f'C {}'.format(text.replace('_', ' ')
-
-
-if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=5000)
