@@ -2,7 +2,8 @@
 """Import the required module"""
 from flask import Flask
 from urllib.parse import unquote
-
+from flask import render_template
+from templates import *
 
 app = Flask(__name__)
 
@@ -41,9 +42,9 @@ def numberiscool(n):
 
 
 @app.route('/number_template/<int:n>', strict_slashes=False)
-def numberiscool(n):
-    """Prints number only if it is an integer"""
-    return f'{n} is a number'
+def numbertemplate(n):
+    """Display an HTML page only if n is an integer"""
+    return render_template('5-number.html', name=n)
 
 
 if __name__ == "__main__":
