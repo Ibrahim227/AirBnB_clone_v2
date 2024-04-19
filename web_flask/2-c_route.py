@@ -10,7 +10,7 @@ app = Flask(__name__)
 @app.route('/', strict_slashes=False)
 def hello():
     """define a function that prints HEllo HBNB"""
-    return 'Hello HBNB'
+    return 'Hello HBNB!'
 
 
 @app.route('/hbnb', strict_slashes=False)
@@ -22,7 +22,6 @@ def hbnb():
 @app.route('/c/<text>', strict_slashes=False)
 def cisfun(text):
     """Prints HBNB"""
-    text = unquote(text)
     return f'C {}'.format(text.replace('_', ' ')
 
 
