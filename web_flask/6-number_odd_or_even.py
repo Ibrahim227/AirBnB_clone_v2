@@ -50,7 +50,7 @@ def numbertemplate(n):
 def numberoddoreven(n):
     """Display an HTML page only if n is an integer"""
     if isinstance(n, int):
-        return render_template('5-number.html', n=n)
+        return render_template('6-number_odd_or_even.html', n=n)
 
 
 if __name__ == "__main__":
